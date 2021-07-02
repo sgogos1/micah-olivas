@@ -6,6 +6,9 @@
   --ll-name-margin: 6% 0%;
   --ll-description-margin: 3% 0% 6% 0%;
   --ll-calendar-top-margin: 6%;
+  --calendar-heading-padding: 0 10% 2% 10%;
+  --calendar-heading-font-size: 1.75vmax;
+  --ll-calendar-content-font-size: 1.65vmax;
 }
 
 .landscape {
@@ -16,6 +19,9 @@
   --ll-name-margin: 2% 0%;
   --ll-description-margin: 1% 0% 2% 0%; 
   --ll-calendar-top-margin: 2%;
+  --calendar-heading-padding: 0 10% 2% 10%;
+  --calendar-heading-font-size: 1.1vmax;
+  --ll-calendar-content-font-size: 1vmax;
 }
 
 html {
@@ -26,6 +32,7 @@ html {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 body, main {
@@ -60,6 +67,7 @@ body, main {
 .ll-name-element {
   margin-block: 0;
   font-size: var(--ll-name-element-font-size);
+  font-weight: normal;
 }
 
 #ll-description, #ll-station {
@@ -70,13 +78,56 @@ body, main {
 #ll-description-element, #ll-station-element {
   margin-block: 0;
   font-size: var(--ll-description-element-font-size);
+  font-weight: normal;
+}
+
+#ll-calendar-container {
+  margin-top: var(--ll-calendar-top-margin);
+  height: fit-content;
+  width: fit-content;
+  max-width: var(--interior-max-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#ll-calendar-header {
+  white-space: nowrap;
+  min-width: fit-content;
+  font-weight: normal;
+  margin-block: 0;
+  padding: var(--calendar-heading-padding);
+  border-bottom: 4px black solid;
+  font-size: var(--calendar-heading-font-size);
 }
 
 #ll-calendar {
-  margin-top: var(--ll-calendar-top-margin);
-  height: 10vmax;
-  width: 10vmax;
-  border: 0.25px black solid;
+  width: 120%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: none;
+}
+
+.ll-calendar-element {
+  width: 100%;
+  display: flex;
+}
+
+.ll-date {
+  width: 30%;
+  border-right: 4px black solid;
+}
+
+.ll-location {
+  width: 70%;
+}
+
+.ll-date, .ll-location {
+  margin-block: 0;
+  font-size: var(--ll-calendar-content-font-size);
+  padding: 2% 5%;
+  border-bottom: 1px solid RGBA(211, 211, 218, 0.5);
 }
 
 svg {
