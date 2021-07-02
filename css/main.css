@@ -44,7 +44,7 @@ body, main {
   width: inherit;
 }
 
-#content, #arc {
+#content {
   height: 100%;
   width: 100%;
   display: flex;
@@ -53,6 +53,13 @@ body, main {
   justify-content: center;
   text-align: center;
   position: absolute;
+}
+
+#arc {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 #ll-logo {
