@@ -15,6 +15,57 @@ function pageSize(){
         arcSvg.removeAttribute("preserveAspectRatio");
     }
 }
-
-window.onload = pageSize;
 window.onresize = pageSize;
+
+const calendarBody = document.getElementById("ll-calendar-body");
+const calendarHeader = document.getElementById("ll-calendar-header");
+
+function checkForBroadcasting(){
+
+    let textCreated = false;
+
+    if (calendarBody.children.length > 0){
+        const currentTime = new Date();
+
+        for (let i = 0; i < calendarBody.children.length; i++){
+
+            const calendarMonth = Number(calendarBody.children[i].getAttribute("date").slice(0, 2));
+            const calendarDay = Number(calendarBody.children[i].getAttribute("date").slice(3, 5));
+
+            const calendarStartTimeHours = Number(calendarBody.children[i].getAttribute("timeStart").slice(0, 2));
+            const calendarStartTimeMins = Number(calendarBody.children[i].getAttribute("timeStart").slice(3, 5));
+
+            const calendarEndTimeHours = Number(calendarBody.children[i].getAttribute("timeEnd").slice(0, 2));
+            const calendarEndTimeMins = Number(calendarBody.children[i].getAttribute("timeEnd").slice(3, 5));
+
+            if (calendarMonth === currentTime.getMonth()+1 && calendarDay === currentTime.getDate()){
+                if (calendarStartTimeHours <= currentTime.getHours() && calendarEndTimeHours >= currentTime.getHours()){
+                    if (calendarStartTimeHours === calendarEndTimeHours && currentTime.getMinutes() >= calendarStartTimeMins && currentTime.getMinutes() <= calendarEndTimeMins){
+                        const station = calendarBody.children[i].getAttribute("location");
+                        calendarHeader.innerHTML = "Broadcasting now on " + station;
+                        textCreated = true;
+                    }
+                    else {
+                        if (calendarStartTimeHours !== calendarEndTimeHours){
+                            const station = calendarBody.children[i].getAttribute("location");
+                            calendarHeader.innerHTML = "Broadcasting now on " + station;
+                            textCreated = true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    if (!textCreated){
+        calendarHeader.innerHTML = "Next Broadcasts";
+    }
+    
+}
+
+function loadPage(){
+    pageSize();
+    checkForBroadcasting();
+}
+
+window.onload = loadPage;
