@@ -38,18 +38,20 @@ function checkForBroadcasting(){
             const calendarEndTimeHours = Number(calendarBody.children[i].getAttribute("timeEnd").slice(0, 2));
             const calendarEndTimeMins = Number(calendarBody.children[i].getAttribute("timeEnd").slice(3, 5));
 
-            if (calendarMonth === currentTime.getMonth()+1 && calendarDay === currentTime.getDate()){
+            if (calendarMonth === currentTime.getMonth()+1 && calendarDay === currentTime.getDate() && !textCreated){
                 if (calendarStartTimeHours <= currentTime.getHours() && calendarEndTimeHours >= currentTime.getHours()){
                     if (calendarStartTimeHours === calendarEndTimeHours && currentTime.getMinutes() >= calendarStartTimeMins && currentTime.getMinutes() <= calendarEndTimeMins){
                         const station = calendarBody.children[i].getAttribute("location");
                         calendarHeader.innerHTML = "Broadcasting now on " + station;
                         textCreated = true;
+                        break;
                     }
                     else {
                         if (calendarStartTimeHours !== calendarEndTimeHours){
                             const station = calendarBody.children[i].getAttribute("location");
                             calendarHeader.innerHTML = "Broadcasting now on " + station;
                             textCreated = true;
+                            break;
                         }
                     }
                 }
