@@ -20,8 +20,32 @@ window.onresize = pageSize;
 const calendarBody = document.getElementById("ll-calendar-body");
 const calendarHeader = document.getElementById("ll-calendar-header");
 
-function checkForBroadcasting(){
+function generateCalendar(){
+    let calendarEvents;
 
+    fetch('../events.json')
+    .then(response => response.json())
+    .then(obj => {
+        let calendarEvents = obj;
+
+        for (let i = 0; i < calendarEvents.events.length; i++){
+            const event = calendarEvents.events[i];
+            const date = event.date;
+            const displayTime = event.displayTime;
+            const startTime = event.startTime;
+            const endTime = event.endTime;
+            const location = event.location;
+        }
+        
+
+
+    }
+        );
+
+}
+
+
+function checkForBroadcasting(){
     let textCreated = false;
 
     if (calendarBody.children.length > 0){
@@ -67,6 +91,7 @@ function checkForBroadcasting(){
 
 function loadPage(){
     pageSize();
+    generateCalendar();
     checkForBroadcasting();
 }
 
