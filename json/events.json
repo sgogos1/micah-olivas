@@ -1,18 +1,32 @@
 {
     "events": [
         {
-            "date": "05/07",
+            "date": "07/05",
+            "displayTime": "10-11am",
+            "startTime": "10:00",
+            "endTime": "11:00",
+            "location": "KZSU"
+        },
+        {
+            "date": "07/14",
+            "displayTime": "12-1pm GMT",
+            "startTime": "5:00",
+            "endTime": "6:00",
+            "location": "NOODS Radio"
+        },
+        {
+            "date": "07/16",
             "displayTime": "2-3pm",
             "startTime": "14:00",
             "endTime": "15:00",
             "location": "KZSU"
         },
         {
-            "date": "05/10",
-            "displayTime": "1-5pm",
-            "startTime": "13:00",
-            "endTime": "17:00",
-            "location": "BFF.fm"
+            "date": "07/19",
+            "displayTime": "10-11am",
+            "startTime": "10:00",
+            "endTime": "11:00",
+            "location": "KZSU"
         }
     ]
 }
