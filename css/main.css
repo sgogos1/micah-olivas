@@ -9,6 +9,8 @@
   --calendar-heading-padding: 0 10% 2% 10%;
   --calendar-heading-font-size: 1.75vmax;
   --ll-calendar-content-font-size: 1.65vmax;
+  --blinking-light-height: 1.5vmax;
+	--blinking-light-width: 2.25vmax;
 }
 
 .landscape {
@@ -22,6 +24,8 @@
   --calendar-heading-padding: 0 10% 2% 10%;
   --calendar-heading-font-size: 1.1vmax;
   --ll-calendar-content-font-size: 1vmax;
+  --blinking-light-height: 1.15vmax;
+	--blinking-light-width: 1.6vmax;
 }
 
 html {
@@ -105,6 +109,10 @@ body, main {
 }
 
 #ll-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   white-space: nowrap;
   min-width: fit-content;
   font-weight: normal;
@@ -113,13 +121,55 @@ body, main {
   font-size: var(--calendar-heading-font-size);
 }
 
+#ll-calendar-header a {
+  color: black;
+  padding-left: 2%;
+}
+
+#ll-calendar-header a:hover {
+  text-decoration: none;
+}
+
+.blinking-light {
+	background: green;
+	border-radius: 50%;
+	height: var(--blinking-light-height);
+	width: var(--blinking-light-width);
+  margin-right: 2%;
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	transform: scale(1);
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
+
 #ll-calendar {
+  min-width: fit-content;
   width: 120%;
   border-spacing: 0;
   border-collapse: collapse;
   border: none;
   text-align: left;
   white-space: nowrap;
+}
+
+#ll-calendar-body tr {
+  border-bottom: 1px solid RGBA(211, 211, 218, 0.5);
 }
 
 .top-row {
@@ -132,19 +182,20 @@ body, main {
 }
 
 .ll-date {
-  width: 30%;
+  min-width: fit-content;
+  max-width: 30%;
   border-right: 2px black solid;
 }
 
 .ll-location {
-  width: 70%;
+  min-width: fit-content;
+  max-width: 70%;
 }
 
 .ll-date, .ll-location {
   margin-block: 0;
   font-size: var(--ll-calendar-content-font-size);
   padding: 2% 5%;
-  border-bottom: 1px solid RGBA(211, 211, 218, 0.5);
 }
 
 svg {
