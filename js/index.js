@@ -20,9 +20,7 @@ window.onresize = pageSize;
 const calendarBody = document.getElementById("ll-calendar-body");
 const calendarHeader = document.getElementById("ll-calendar-header");
 
-function generateCalendar(){
-    let calendarEvents;
-
+async function generateCalendar(){
     fetch('../json/events.json')
     .then(response => response.json())
     .then(obj => {
@@ -36,9 +34,15 @@ function generateCalendar(){
                             const startTime = event.startTime;
                             const endTime = event.endTime;
                             const location = event.location;
+                            const linkToListen = event.linkToListen;
+
+                            let classes = "ll-calendar-element ";
+                            if (i === 0){
+                                classes += "top-row";
+                            }
 
                             calendarBody.innerHTML += 
-                            `<tr class="ll-calendar-element" date="${date}" timeStart="${startTime}" timeEnd="${endTime}" location="${location}">
+                            `<tr class="${classes}" date="${date}" timeStart="${startTime}" timeEnd="${endTime}" location="${location}" linkToListen="${linkToListen}">
                                 <td class="ll-date">${date}</td>
                                 <td class="ll-location">${displayTime} ${location}</td>
                             </tr>`;
@@ -46,11 +50,9 @@ function generateCalendar(){
                     }
                 }
         );
-
 }
 
-
-function checkForBroadcasting(){
+async function checkForBroadcasting(){
     let textCreated = false;
 
     if (calendarBody.children.length > 0){
@@ -71,14 +73,14 @@ function checkForBroadcasting(){
                 if (calendarStartTimeHours <= currentTime.getHours() && calendarEndTimeHours >= currentTime.getHours()){
                     if (calendarStartTimeHours === calendarEndTimeHours && currentTime.getMinutes() >= calendarStartTimeMins && currentTime.getMinutes() <= calendarEndTimeMins){
                         const station = calendarBody.children[i].getAttribute("location");
-                        calendarHeader.innerHTML = "Broadcasting now on " + station;
+                        calendarHeader.innerHTML = `Broadcasting now on <a href="${calendarBody.children[i].getAttribute("linkToListen")}">${station}</a>`;
                         textCreated = true;
                         break;
                     }
                     else {
                         if (calendarStartTimeHours !== calendarEndTimeHours){
                             const station = calendarBody.children[i].getAttribute("location");
-                            calendarHeader.innerHTML = "Broadcasting now on " + station;
+                            calendarHeader.innerHTML = `Broadcasting now on <a href="${calendarBody.children[i].getAttribute("linkToListen")}">${station}</a>`;
                             textCreated = true;
                             break;
                         }
@@ -94,9 +96,10 @@ function checkForBroadcasting(){
     
 }
 
-function loadPage(){
+async function loadPage(){
     pageSize();
     generateCalendar();
+    await new Promise(r => setTimeout(r, 250));
     checkForBroadcasting();
 }
 

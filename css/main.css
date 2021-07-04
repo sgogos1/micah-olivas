@@ -111,10 +111,18 @@ body, main {
   margin-block: 0;
   padding: var(--calendar-heading-padding);
   font-size: var(--calendar-heading-font-size);
-  border-bottom: 2px black solid;
+}
+
+#ll-calendar-header a {
+  color: black;
+}
+
+#ll-calendar-header a:hover {
+  text-decoration: none;
 }
 
 #ll-calendar {
+  min-width: fit-content;
   width: 120%;
   border-spacing: 0;
   border-collapse: collapse;
@@ -123,25 +131,34 @@ body, main {
   white-space: nowrap;
 }
 
+#ll-calendar-body tr {
+  border-bottom: 1px solid RGBA(211, 211, 218, 0.5);
+}
+
+.top-row {
+  border-top: 2px black solid;
+}
+
 .ll-calendar-element {
   width: 100%;
   display: flex;
 }
 
 .ll-date {
-  width: 30%;
+  min-width: fit-content;
+  max-width: 30%;
   border-right: 2px black solid;
 }
 
 .ll-location {
-  width: 70%;
+  min-width: fit-content;
+  max-width: 70%;
 }
 
 .ll-date, .ll-location {
   margin-block: 0;
   font-size: var(--ll-calendar-content-font-size);
   padding: 2% 5%;
-  border-bottom: 1px solid RGBA(211, 211, 218, 0.5);
 }
 
 svg {
