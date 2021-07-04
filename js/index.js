@@ -23,23 +23,28 @@ const calendarHeader = document.getElementById("ll-calendar-header");
 function generateCalendar(){
     let calendarEvents;
 
-    fetch('../events.json')
+    fetch('../json/events.json')
     .then(response => response.json())
     .then(obj => {
-        let calendarEvents = obj;
+                    let calendarEvents = obj;
 
-        for (let i = 0; i < calendarEvents.events.length; i++){
-            const event = calendarEvents.events[i];
-            const date = event.date;
-            const displayTime = event.displayTime;
-            const startTime = event.startTime;
-            const endTime = event.endTime;
-            const location = event.location;
-        }
-        
+                    if (calendarEvents.events && calendarEvents.events.length > 0){
+                        for (let i = 0; i < calendarEvents.events.length; i++){
+                            const event = calendarEvents.events[i];
+                            const date = event.date;
+                            const displayTime = event.displayTime;
+                            const startTime = event.startTime;
+                            const endTime = event.endTime;
+                            const location = event.location;
 
-
-    }
+                            calendarBody.innerHTML += 
+                            `<tr class="ll-calendar-element" date="${date}" timeStart="${startTime}" timeEnd="${endTime}" location="${location}">
+                                <td class="ll-date">${date}</td>
+                                <td class="ll-location">${displayTime} ${location}</td>
+                            </tr>`;
+                        }   
+                    }
+                }
         );
 
 }

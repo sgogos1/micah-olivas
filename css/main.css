@@ -111,6 +111,7 @@ body, main {
   margin-block: 0;
   padding: var(--calendar-heading-padding);
   font-size: var(--calendar-heading-font-size);
+  border-bottom: 2px black solid;
 }
 
 #ll-calendar {
@@ -120,10 +121,6 @@ body, main {
   border: none;
   text-align: left;
   white-space: nowrap;
-}
-
-.top-row {
-  border-top: 2px black solid;
 }
 
 .ll-calendar-element {
