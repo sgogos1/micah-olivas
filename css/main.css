@@ -1,5 +1,5 @@
 .portrait {
-  --ll-logo-height: 7vmax;
+  --ll-logo-height: 10vw;
   --ll-name-element-font-size: 6vmax;
   --ll-description-element-font-size: 1.85vmax;
   --interior-max-width: 45vw;
@@ -14,18 +14,18 @@
 }
 
 .landscape {
-  --ll-logo-height: 5vmax;
-  --ll-name-element-font-size: 3vmax;
-  --ll-description-element-font-size: 1.2vmax;
-  --interior-max-width: 15vw;
+  --ll-logo-height: 10vh;
+  --ll-name-element-font-size: 6vh;
+  --ll-description-element-font-size: 2vh;
+  --interior-max-width: 25vh;
   --ll-name-margin: 2% 0%;
   --ll-description-margin: 1% 0% 2% 0%; 
   --ll-calendar-top-margin: 2%;
   --calendar-heading-padding: 0 10% 2% 10%;
-  --calendar-heading-font-size: 1.1vmax;
-  --ll-calendar-content-font-size: 1vmax;
-  --blinking-light-height: 1.15vmax;
-	--blinking-light-width: 1.6vmax;
+  --calendar-heading-font-size: 1.9vh;
+  --ll-calendar-content-font-size: 1.7vh;
+  --blinking-light-height: 1.25vh;
+	--blinking-light-width: 2vh;
 }
 
 html {
