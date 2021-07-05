@@ -148,11 +148,11 @@ body {
 }
 
 #ll-calendar-body tr {
-  border-bottom: 1px solid RGBA(211, 211, 218, 0.5);
+  border-bottom: 0.1vh solid RGBA(211, 211, 218, 0.5);
 }
 
 .top-row {
-  border-top: 2px black solid;
+  border-top: 0.25vh black solid;
 }
 
 .ll-calendar-element {
@@ -163,7 +163,7 @@ body {
 .ll-date {
   min-width: fit-content;
   max-width: 30%;
-  border-right: 2px black solid;
+  border-right: 0.25vh black solid;
 }
 
 .ll-location {
