@@ -2,7 +2,7 @@ const body = document.body;
 const arcSvg = document.getElementById("arc-svg");
 
 function pageSize(){    
-    if (innerWidth > 750){
+    if (innerWidth > 750 || innerHeight < innerWidth){
         arcSvg.setAttribute("viewBox", "0 -20 235.46 300");
         arcSvg.removeAttribute("preserveAspectRatio", "none");
     }
