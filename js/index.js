@@ -162,7 +162,8 @@ const lightLayerHeaders = document.getElementsByClassName("ll-name-element");
 const description = document.getElementById("ll-description");
 const station = document.getElementById("ll-station");
 const calendarContainer = document.getElementById("ll-calendar-container");
-const content = document.getElementById("content");
+const arc = document.getElementById("arc");
+const myPath = document.getElementById("myPath");
 
 async function animate(){
 
@@ -197,7 +198,8 @@ async function animate(){
     calendarContainer.classList.add("visible");
     calendarContainer.classList.remove("hidden");
 
-    // content.setAttribute("style", "background-color: lightgrey");
+    arc.setAttribute("style", "background-color: #f2f2f2");
+    myPath.setAttribute("stroke", "#f2f2f2");
 }
 
 async function loadPage(){
