@@ -23,10 +23,13 @@ async function generateCalendar(){
                     let calendarEvents = obj;
 
                     if (calendarEvents.events && calendarEvents.events.length > 0){
+
+                        const currentTime = new Date();
+
                         for (let i = 0; i < calendarEvents.events.length; i++){
                             const event = calendarEvents.events[i];
-                            const date = event.date;
-                            const displayTime = event.displayTime;
+                            let date = event.date;
+                            let displayTime = event.displayTime;
                             const startTime = event.startTime;
                             const endTime = event.endTime;
                             const location = event.location;
@@ -37,10 +40,20 @@ async function generateCalendar(){
                                 classes += "top-row";
                             }
 
+
+                            if (currentTime.getMonth()+1 >= Number(date.slice(0, 2)) && currentTime.getDate() >= Number(date.slice(3, 5)) && currentTime.getHours() >= Number(endTime.slice(0, 2)) && currentTime.getMinutes() >= Number(endTime.slice(3, 5))){
+                                date = ` strike-through">${event.date}`
+                                displayTime = ` strike-through">${event.displayTime}`
+                            }
+                            else {
+                                date = `">${event.date}`
+                                displayTime = `">${event.displayTime}`
+                            }
+
                             calendarBody.innerHTML += 
-                            `<tr class="${classes}" date="${date}" timeStart="${startTime}" timeEnd="${endTime}" location="${location}" linkToListen="${linkToListen}">
-                                <td class="ll-date">${date}</td>
-                                <td class="ll-location">${displayTime} ${location}</td>
+                            `<tr class="${classes}" date="${event.date}" timeStart="${startTime}" timeEnd="${endTime}" location="${location}" linkToListen="${linkToListen}">
+                                <td class="ll-date${date}</td>
+                                <td class="ll-location${displayTime} ${location}</td>
                             </tr>`;
                         }   
                     }
