@@ -62,7 +62,7 @@ body {
 #ll-logo {
   height: var(--ll-logo-height);
   max-width: var(--interior-max-width);
-  transition: transform 1.5s;
+  transition: opacity 3s ease-in, transform 2s ease-out;
 }
 
 #ll-name {
@@ -75,13 +75,13 @@ body {
   margin-block: 0;
   font-size: var(--ll-name-element-font-size);
   font-weight: normal;
-  transition: transform 1.5s;
+  transition: opacity 1.5s;
 }
 
 #ll-description, #ll-station {
   margin: var(--ll-description-margin);
   max-width: var(--interior-max-width);
-  transition: transform 1.5s;
+  transition: opacity 2s;
 }
 
 #ll-description-element, #ll-station-element {
