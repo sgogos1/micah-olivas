@@ -1,6 +1,5 @@
 const body = document.body;
 const arcSvg = document.getElementById("arc-svg");
-const arcText = document.getElementById("arc-text");
 
 function pageSize(){    
     if (innerWidth > 750 || innerHeight < innerWidth){
@@ -107,6 +106,8 @@ async function checkForBroadcasting(){
     
 }
 
+const arcText = document.getElementById("arc-text");
+
 async function generateSongs(){
     fetch('../csv/songs.csv')
     .then(response => response.text())
@@ -138,7 +139,7 @@ async function generateSongs(){
             arcText.innerHTML +=
             `<animate
               attributeName="startOffset"
-              from="-535%"
+              from="-567%"
               to ="100%"
               dur="100s"
               repeatCount="indefinite"
@@ -156,11 +157,55 @@ async function generateSongs(){
     });
 }
 
+const logo = document.getElementById("ll-logo");
+const lightLayerHeaders = document.getElementsByClassName("ll-name-element");
+const description = document.getElementById("ll-description");
+const station = document.getElementById("ll-station");
+const calendarContainer = document.getElementById("ll-calendar-container");
+const content = document.getElementById("content");
+
+async function animate(){
+
+    /* Transitions the logo down */
+    logo.classList.remove("above-page");
+
+    /* Waits 250 milliseconds */
+    await new Promise(r => setTimeout(r, 350));
+
+    /* Transitions the two segments of the logo "light" and "layer", 250 milliseconds apart */
+    for (let i = 0; i < lightLayerHeaders.length; i++){
+        lightLayerHeaders[i].classList.remove("above-page");
+        await new Promise(r => setTimeout(r, 350));
+    }
+    
+    /* Waits 250 milliseconds */
+    await new Promise(r => setTimeout(r, 350));
+
+    /* Transitions description down */
+    description.classList.remove("above-page");
+
+    /* Waits 250 milliseconds */
+    await new Promise(r => setTimeout(r, 350));
+
+    /* Transitions description down */
+    station.classList.remove("above-page");
+
+    /* Waits 250 milliseconds */
+    await new Promise(r => setTimeout(r, 1500));
+
+    /* Fades in the calendar in 1 second */
+    calendarContainer.classList.add("visible");
+    calendarContainer.classList.remove("hidden");
+
+    // content.setAttribute("style", "background-color: lightgrey");
+}
+
 async function loadPage(){
     pageSize();
     generateCalendar();
     await new Promise(r => setTimeout(r, 250));
     checkForBroadcasting();
+    animate();
     generateSongs();
 }
 
