@@ -167,34 +167,28 @@ const myPath = document.getElementById("myPath");
 
 async function animate(){
 
-    /* Transitions the logo down */
+    /* Transitions the logo down and un-hides it*/
     logo.classList.remove("above-page");
+    logo.classList.add("visible");
+    logo.classList.remove("hidden");
 
     /* Waits 250 milliseconds */
-    await new Promise(r => setTimeout(r, 350));
+    await new Promise(r => setTimeout(r, 3000));
 
     /* Transitions the two segments of the logo "light" and "layer", 250 milliseconds apart */
     for (let i = 0; i < lightLayerHeaders.length; i++){
-        lightLayerHeaders[i].classList.remove("above-page");
-        await new Promise(r => setTimeout(r, 350));
+        lightLayerHeaders[i].classList.add("visible");
+        lightLayerHeaders[i].classList.remove("hidden");
     }
     
     /* Waits 250 milliseconds */
-    await new Promise(r => setTimeout(r, 350));
+    await new Promise(r => setTimeout(r, 1000));
 
     /* Transitions description down */
-    description.classList.remove("above-page");
-
-    /* Waits 250 milliseconds */
-    await new Promise(r => setTimeout(r, 350));
-
-    /* Transitions description down */
-    station.classList.remove("above-page");
-
-    /* Waits 250 milliseconds */
-    await new Promise(r => setTimeout(r, 1500));
-
-    /* Fades in the calendar in 1 second */
+    description.classList.add("visible");
+    description.classList.remove("hidden");
+    station.classList.add("visible");
+    station.classList.remove("hidden");
     calendarContainer.classList.add("visible");
     calendarContainer.classList.remove("hidden");
 
