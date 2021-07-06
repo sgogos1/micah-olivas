@@ -41,9 +41,11 @@ async function generateCalendar(){
                             }
 
 
-                            if (currentTime.getMonth()+1 >= Number(date.slice(0, 2)) && currentTime.getDate() >= Number(date.slice(3, 5)) && currentTime.getHours() >= Number(endTime.slice(0, 2)) && currentTime.getMinutes() >= Number(endTime.slice(3, 5))){
-                                date = ` strike-through">${event.date}`
-                                displayTime = ` strike-through">${event.displayTime}`
+                            if ((currentTime.getMonth()+1 >= Number(date.slice(0, 2)) && currentTime.getDate() >= Number(date.slice(3, 5)) 
+                            || (currentTime.getMonth()+1 === Number(date.slice(0, 2) && currentTime.getDate() === Number(date.slice(3, 5))) 
+                            && currentTime.getHours() >= Number(endTime.slice(0, 2)) && currentTime.getMinutes() >= Number(endTime.slice(3, 5))))){                              
+                                date = ` strike-through">${event.date}`;
+                                displayTime = ` strike-through">${event.displayTime}`;
                             }
                             else {
                                 date = `">${event.date}`
