@@ -83,14 +83,14 @@ async function checkForBroadcasting(){
                 if (calendarStartTimeHours <= currentTime.getHours() && calendarEndTimeHours >= currentTime.getHours()){
                     if (calendarStartTimeHours === calendarEndTimeHours && currentTime.getMinutes() >= calendarStartTimeMins && currentTime.getMinutes() <= calendarEndTimeMins){
                         const station = calendarBody.children[i].getAttribute("location");
-                        calendarHeader.innerHTML = `<div class="blinking-light"></div>Broadcasting now on <a href="${calendarBody.children[i].getAttribute("linkToListen")}">${station}</a>`;
+                        calendarHeader.innerHTML = `<div class="blinking-light"></div>Listen on <a href="${calendarBody.children[i].getAttribute("linkToListen")}">${station}</a>`;
                         textCreated = true;
                         break;
                     }
                     else {
                         if (calendarStartTimeHours !== calendarEndTimeHours){
                             const station = calendarBody.children[i].getAttribute("location");
-                            calendarHeader.innerHTML = `<div class="blinking-light"></div>Broadcasting now on <a href="${calendarBody.children[i].getAttribute("linkToListen")}">${station}</a>`;
+                            calendarHeader.innerHTML = `<div class="blinking-light"></div>Listen on <a href="${calendarBody.children[i].getAttribute("linkToListen")}">${station}</a>`;
                             textCreated = true;
                             break;
                         }
