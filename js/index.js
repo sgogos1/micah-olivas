@@ -100,7 +100,7 @@ async function checkForBroadcasting(){
     }
 
     if (!textCreated){
-        calendarHeader.innerHTML = "Next Broadcasts";
+        calendarHeader.innerHTML = "Upcoming Broadcasts";
     }
     
 }
