@@ -1,56 +1,35 @@
-.portrait {
-  --ll-logo-height: 7vmax;
-  --ll-name-element-font-size: 6vmax;
-  --ll-description-element-font-size: 1.85vmax;
-  --interior-max-width: 45vw;
-  --ll-name-margin: 6% 0%;
-  --ll-description-margin: 3% 0% 6% 0%;
-  --ll-calendar-top-margin: 6%;
-  --calendar-heading-padding: 0 10% 2% 10%;
-  --calendar-heading-font-size: 1.75vmax;
-  --ll-calendar-content-font-size: 1.65vmax;
-  --blinking-light-height: 1.5vmax;
-	--blinking-light-width: 2.25vmax;
-}
-
-.landscape {
-  --ll-logo-height: 5vmax;
-  --ll-name-element-font-size: 3vmax;
-  --ll-description-element-font-size: 1.2vmax;
-  --interior-max-width: 15vw;
-  --ll-name-margin: 2% 0%;
-  --ll-description-margin: 1% 0% 2% 0%;
-  --ll-calendar-top-margin: 2%;
-  --calendar-heading-padding: 0 10% 2% 10%;
-  --calendar-heading-font-size: 1.1vmax;
-  --ll-calendar-content-font-size: 1vmax;
-  --blinking-light-height: 1.15vmax;
-	--blinking-light-width: 1.6vmax;
-}
-
-html {
-  min-height: 100vh;
-  min-width: 100vw;
-  max-height: 100vh;
-  max-width: 100vw;
-  height: 100vh;
-  width: 100vw;
+html, body, main {
+  min-height: 100%;
+  min-width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   box-sizing: border-box;
+  margin: 0;
 }
 
-body, main {
-  max-height: inherit;
-  max-width: inherit;
-  min-height: inherit;
-  min-width: inherit;
-  height: inherit;
-  width: inherit;
+body {
+  --ll-logo-height: 10vh;
+  --ll-name-element-font-size: 6vh;
+  --ll-description-element-font-size: 2vh;
+  --interior-max-width: 25vh;
+  --calendar-heading-font-size: 1.9vh;
+  --ll-calendar-content-font-size: 1.7vh;
+  --blinking-light-height: 1.25vh;
+	--blinking-light-width: 2vh;
+  --interior-max-width: 25vh;
+  --ll-name-margin: 4vh 0%;
+  --ll-description-margin: 1vh 0% 2vh 0%; 
+  --ll-calendar-top-margin: 2vh;
+  --calendar-heading-padding: 0 10vw 0.5vh 10vw;
 }
 
 #content {
   height: 100%;
   width: 100%;
+  padding-top: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -169,11 +148,11 @@ body, main {
 }
 
 #ll-calendar-body tr {
-  border-bottom: 1px solid RGBA(211, 211, 218, 0.5);
+  border-bottom: 0.1vh solid RGBA(211, 211, 218, 0.5);
 }
 
 .top-row {
-  border-top: 2px black solid;
+  border-top: 0.25vh black solid;
 }
 
 .ll-calendar-element {
@@ -184,7 +163,7 @@ body, main {
 .ll-date {
   min-width: fit-content;
   max-width: 30%;
-  border-right: 2px black solid;
+  border-right: 0.25vh black solid;
 }
 
 .ll-location {
