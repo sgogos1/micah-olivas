@@ -3,11 +3,11 @@ const arcSvg = document.getElementById("arc-svg");
 
 function pageSize(){    
     if (innerWidth > 750 || innerHeight < innerWidth){
-        arcSvg.setAttribute("viewBox", "0 -20 235.46 300");
+        arcSvg.setAttribute("viewBox", "-60 -40 235.46 300");
         arcSvg.removeAttribute("preserveAspectRatio", "none");
     }
     else {
-        arcSvg.setAttribute("viewBox", "10 -40 220 320");
+        arcSvg.setAttribute("viewBox", "-15 -55 150 300");
         arcSvg.setAttribute("preserveAspectRatio", "none");
     }
 }
