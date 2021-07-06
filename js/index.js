@@ -1,5 +1,6 @@
 const body = document.body;
 const arcSvg = document.getElementById("arc-svg");
+const arcText = document.getElementById("arc-text");
 
 function pageSize(){    
     if (innerWidth > 750 || innerHeight < innerWidth){
@@ -106,11 +107,61 @@ async function checkForBroadcasting(){
     
 }
 
+async function generateSongs(){
+    fetch('../csv/songs.csv')
+    .then(response => response.text())
+    .then(obj => {
+
+        const songsCsv = obj;
+        const songsCsvSeparated = songsCsv.split("\n");
+
+        let arcOutput = "";
+        let counter = 0;
+        songsCsvSeparated.forEach(value => {
+            const songSeparated = value.split("\t");
+
+            if (songSeparated.length === 6){
+                const artist = songSeparated[0];
+                const song = songSeparated[1];
+
+                arcOutput += song + " - " + artist;
+
+                if (counter !== songsCsvSeparated.length - 1){
+                    arcOutput += " / ";
+                }
+            }
+            counter++;
+        });
+
+        if (arcOutput !== ""){
+            arcText.innerHTML = arcOutput;
+            arcText.innerHTML +=
+            `<animate
+              attributeName="startOffset"
+              from="-535%"
+              to ="100%"
+              dur="100s"
+              repeatCount="indefinite"
+              restart="always"
+              keyTimes="0;1"
+              calcMode="paced"
+              />
+            <!-- change color -->
+            <!-- <animate
+              attributeName="fill"
+              dur="90s"
+              values="#006400;#000080;gray"
+              calcMode="paced"/> -->`
+        }
+    });
+}
+
 async function loadPage(){
     pageSize();
     generateCalendar();
     await new Promise(r => setTimeout(r, 250));
     checkForBroadcasting();
+    generateSongs();
 }
 
 window.onload = loadPage;
