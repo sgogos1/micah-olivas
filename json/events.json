@@ -9,14 +9,10 @@
             "linkToListen": "http://kzsu.stanford.edu/live/"
         },
         {
-            "date": "07/14",
+            "date": "07/06",
             "displayTime": "5-6am",
             "startTime": "05:00",
-<<<<<<< Updated upstream
-            "endTime": "06:00",
-=======
             "endTime": "11:00",
->>>>>>> Stashed changes
             "location": "NOODS Radio",
             "linkToListen": "https://noodsradio.com/listen"
         },
