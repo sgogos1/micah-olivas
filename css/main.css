@@ -184,8 +184,9 @@ svg {
 }
 
 text {
-  font-family: 'Knewave', cursive;
+  font-family: 'Courier', cursive;
   fill: #00C891;
+  font-size: 12px;
 }
 
 .img-overlay-wrap {
