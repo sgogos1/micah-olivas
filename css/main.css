@@ -17,7 +17,7 @@
   --ll-description-element-font-size: 1.2vmax;
   --interior-max-width: 15vw;
   --ll-name-margin: 2% 0%;
-  --ll-description-margin: 1% 0% 2% 0%; 
+  --ll-description-margin: 1% 0% 2% 0%;
   --ll-calendar-top-margin: 2%;
   --calendar-heading-padding: 0 10% 2% 10%;
   --calendar-heading-font-size: 1.1vmax;
@@ -154,8 +154,9 @@ svg {
 }
 
 text {
-  font-family: 'Knewave', cursive;
+  font-family: 'Courier', cursive;
   fill: #00C891;
+  font-size: 12px;
 }
 
 .img-overlay-wrap {
