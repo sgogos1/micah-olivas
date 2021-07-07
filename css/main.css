@@ -7,7 +7,11 @@
 }
 
 .above-page {
+<<<<<<< Updated upstream
   transform: translateY(-150%);
+=======
+  transform: translateY(-50%);
+>>>>>>> Stashed changes
 }
 
 html, body, main {
@@ -100,7 +104,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Signika', 'Signika', Calibri, 'Signika', sans-serif;
+  font-family: 'Signika', 'Signika', Courier, 'Signika', sans-serif;
   transition: opacity 2s;
 }
 

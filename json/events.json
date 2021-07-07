@@ -1,24 +1,24 @@
 {
     "events": [
         {
-            "date": "07/09",
-            "displayTime": "2-3pm PDT",
+            "date": "07/06",
+            "displayTime": "2-3pm",
             "startTime": "14:00",
-            "endTime": "15:00",
+            "endTime": "21:00",
             "location": "KZSU",
             "linkToListen": "http://kzsu.stanford.edu/live/"
         },
         {
             "date": "07/14",
-            "displayTime": "5-6am PDT",
-            "startTime": "05:00",
-            "endTime": "06:00",
+            "displayTime": "5-6am",
+            "startTime": "04:00",
+            "endTime": "05:00",
             "location": "NOODS Radio",
-            "linkToListen": "https://noodsradio.com/listen"
+            "linkToListen": "https://noodsradio.com"
         },
         {
             "date": "07/16",
-            "displayTime": "2-3pm PDT",
+            "displayTime": "2-3pm",
             "startTime": "14:00",
             "endTime": "15:00",
             "location": "KZSU",
@@ -26,7 +26,7 @@
         },
         {
             "date": "07/19",
-            "displayTime": "10-11am PDT",
+            "displayTime": "10-11am",
             "startTime": "10:00",
             "endTime": "11:00",
             "location": "KZSU",
