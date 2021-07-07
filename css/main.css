@@ -7,11 +7,7 @@
 }
 
 .above-page {
-<<<<<<< Updated upstream
-  transform: translateY(-150%);
-=======
   transform: translateY(-50%);
->>>>>>> Stashed changes
 }
 
 html, body, main {
