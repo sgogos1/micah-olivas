@@ -139,9 +139,9 @@ async function generateSongs(){
             arcText.innerHTML +=
             `<animate
               attributeName="startOffset"
-              from="-567%"
+              from="-320%"
               to ="100%"
-              dur="100s"
+              dur="80s"
               repeatCount="indefinite"
               restart="always"
               keyTimes="0;1"
@@ -175,7 +175,7 @@ async function animatePageLoad(){
     myPath.setAttribute("stroke", "#f2f2f2");
 
     /* Waits 250 milliseconds */
-    await new Promise(r => setTimeout(r, 3000));
+    await new Promise(r => setTimeout(r, 1200));
 
     /* Transitions the two segments of the logo "light" and "layer", 250 milliseconds apart */
     for (let i = 0; i < lightLayerHeaders.length; i++){
@@ -184,7 +184,7 @@ async function animatePageLoad(){
     }
 
     /* Waits 250 milliseconds */
-    await new Promise(r => setTimeout(r, 1000));
+    await new Promise(r => setTimeout(r, 100));
 
     /* Transitions description down */
     description.classList.add("visible");
