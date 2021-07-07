@@ -165,12 +165,14 @@ const calendarContainer = document.getElementById("ll-calendar-container");
 const arc = document.getElementById("arc");
 const myPath = document.getElementById("myPath");
 
-async function animate(){
+async function animatePageLoad(){
 
     /* Transitions the logo down and un-hides it*/
     logo.classList.remove("above-page");
     logo.classList.add("visible");
     logo.classList.remove("hidden");
+    arc.setAttribute("style", "background-color: #f2f2f2");
+    myPath.setAttribute("stroke", "#f2f2f2");
 
     /* Waits 250 milliseconds */
     await new Promise(r => setTimeout(r, 3000));
@@ -191,9 +193,6 @@ async function animate(){
     station.classList.remove("hidden");
     calendarContainer.classList.add("visible");
     calendarContainer.classList.remove("hidden");
-
-    arc.setAttribute("style", "background-color: #f2f2f2");
-    myPath.setAttribute("stroke", "#f2f2f2");
 }
 
 async function loadPage(){
@@ -201,7 +200,7 @@ async function loadPage(){
     generateCalendar();
     await new Promise(r => setTimeout(r, 250));
     checkForBroadcasting();
-    animate();
+    animatePageLoad();
     generateSongs();
 }
 
