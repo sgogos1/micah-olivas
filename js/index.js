@@ -192,8 +192,8 @@ async function animate(){
     calendarContainer.classList.add("visible");
     calendarContainer.classList.remove("hidden");
 
-    arc.setAttribute("style", "background-color: #f2f2f2");
-    myPath.setAttribute("stroke", "#f2f2f2");
+    arc.setAttribute("style", "background-color: #f4f4f4");
+    myPath.setAttribute("stroke", "#f4f4f4");
 }
 
 async function loadPage(){
