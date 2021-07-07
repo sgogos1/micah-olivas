@@ -1,7 +1,7 @@
 const body = document.body;
 const arcSvg = document.getElementById("arc-svg");
 
-function pageSize(){    
+function pageSize(){
     if (innerWidth > 750 || innerHeight < innerWidth){
         arcSvg.setAttribute("viewBox", "-60 -40 235.46 300");
         arcSvg.removeAttribute("preserveAspectRatio", "none");
@@ -41,8 +41,8 @@ async function generateCalendar(){
                             }
 
 
-                            if ((currentTime.getMonth()+1 >= Number(date.slice(0, 2)) && currentTime.getDate() > Number(date.slice(3, 5))) 
-                            || (currentTime.getMonth()+1 === Number(date.slice(0, 2)) && currentTime.getDate() === Number(date.slice(3, 5)) && currentTime.getHours() >= Number(endTime.slice(0, 2)) && currentTime.getMinutes() >= Number(endTime.slice(3, 5)))){                              
+                            if ((currentTime.getMonth()+1 >= Number(date.slice(0, 2)) && currentTime.getDate() > Number(date.slice(3, 5)))
+                            || (currentTime.getMonth()+1 === Number(date.slice(0, 2)) && currentTime.getDate() === Number(date.slice(3, 5)) && currentTime.getHours() >= Number(endTime.slice(0, 2)) && currentTime.getMinutes() >= Number(endTime.slice(3, 5)))){
                                 date = ` strike-through">${event.date}`;
                                 displayTime = ` strike-through">${event.displayTime}`;
                             }
@@ -51,12 +51,12 @@ async function generateCalendar(){
                                 displayTime = `">${event.displayTime}`
                             }
 
-                            calendarBody.innerHTML += 
+                            calendarBody.innerHTML +=
                             `<tr class="${classes}" date="${event.date}" timeStart="${startTime}" timeEnd="${endTime}" location="${location}" linkToListen="${linkToListen}">
                                 <td class="ll-date${date}</td>
                                 <td class="ll-location${displayTime} ${location}</td>
                             </tr>`;
-                        }   
+                        }
                     }
                 }
         );
@@ -103,7 +103,7 @@ async function checkForBroadcasting(){
     if (!textCreated){
         calendarHeader.innerHTML = "Upcoming Broadcasts";
     }
-    
+
 }
 
 const arcText = document.getElementById("arc-text");
@@ -165,12 +165,14 @@ const calendarContainer = document.getElementById("ll-calendar-container");
 const arc = document.getElementById("arc");
 const myPath = document.getElementById("myPath");
 
-async function animate(){
+async function animatePageLoad(){
 
     /* Transitions the logo down and un-hides it*/
     logo.classList.remove("above-page");
     logo.classList.add("visible");
     logo.classList.remove("hidden");
+    arc.setAttribute("style", "background-color: #f2f2f2");
+    myPath.setAttribute("stroke", "#f2f2f2");
 
     /* Waits 250 milliseconds */
     await new Promise(r => setTimeout(r, 3000));
@@ -180,7 +182,7 @@ async function animate(){
         lightLayerHeaders[i].classList.add("visible");
         lightLayerHeaders[i].classList.remove("hidden");
     }
-    
+
     /* Waits 250 milliseconds */
     await new Promise(r => setTimeout(r, 1000));
 
@@ -201,7 +203,7 @@ async function loadPage(){
     generateCalendar();
     await new Promise(r => setTimeout(r, 250));
     checkForBroadcasting();
-    animate();
+    animatePageLoad();
     generateSongs();
 }
 

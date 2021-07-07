@@ -1,10 +1,10 @@
 {
     "events": [
         {
-            "date": "07/06",
+            "date": "07/09",
             "displayTime": "2-3pm",
             "startTime": "14:00",
-            "endTime": "21:00",
+            "endTime": "15:00",
             "location": "KZSU",
             "linkToListen": "http://kzsu.stanford.edu/live/"
         },
