@@ -141,7 +141,7 @@ async function generateSongs(){
               attributeName="startOffset"
               from="-320%"
               to ="100%"
-              dur="80s"
+              dur="60s"
               repeatCount="indefinite"
               restart="always"
               keyTimes="0;1"
@@ -194,8 +194,8 @@ async function animatePageLoad(){
     calendarContainer.classList.add("visible");
     calendarContainer.classList.remove("hidden");
 
-    arc.setAttribute("style", "background-color: #f4f4f4");
-    myPath.setAttribute("stroke", "#f4f4f4");
+    arc.setAttribute("style", "background-color: #ededed");
+    myPath.setAttribute("stroke", "#ededed");
 }
 
 async function loadPage(){

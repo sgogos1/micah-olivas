@@ -25,11 +25,11 @@ html, body, main {
 body {
   --ll-logo-height: 9vh;
   --ll-name-element-font-size: 5vh;
-  --ll-description-element-1-font-size: 2.5vh;
-  --ll-description-element-2-font-size: 1.9vh;
+  --ll-description-element-1-font-size: 2.1vh;
+  --ll-description-element-2-font-size: 1.6vh;
   --interior-max-width: 25vh;
-  --calendar-heading-font-size: 1.9vh;
-  --ll-calendar-content-font-size: 1.7vh;
+  --calendar-heading-font-size: 1.6vh;
+  --ll-calendar-content-font-size: 1.6vh;
   --blinking-light-height: 1.25vh;
 	--blinking-light-width: 2vh;
   --interior-max-width: 22vh;
