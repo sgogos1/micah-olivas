@@ -1,52 +1,48 @@
-.portrait {
-  --ll-logo-height: 7vmax;
-  --ll-name-element-font-size: 6vmax;
-  --ll-description-element-font-size: 1.85vmax;
-  --interior-max-width: 45vw;
-  --ll-name-margin: 6% 0%;
-  --ll-description-margin: 3% 0% 6% 0%;
-  --ll-calendar-top-margin: 6%;
-  --calendar-heading-padding: 0 10% 2% 10%;
-  --calendar-heading-font-size: 1.75vmax;
-  --ll-calendar-content-font-size: 1.65vmax;
+.hidden {
+  opacity: 0;
 }
 
-.landscape {
-  --ll-logo-height: 5vmax;
-  --ll-name-element-font-size: 3vmax;
-  --ll-description-element-font-size: 1.2vmax;
-  --interior-max-width: 15vw;
-  --ll-name-margin: 2% 0%;
-  --ll-description-margin: 1% 0% 2% 0%; 
-  --ll-calendar-top-margin: 2%;
-  --calendar-heading-padding: 0 10% 2% 10%;
-  --calendar-heading-font-size: 1.1vmax;
-  --ll-calendar-content-font-size: 1vmax;
+.visible {
+  opacity: 1;
 }
 
-html {
-  min-height: 100vh;
-  min-width: 100vw;
-  max-height: 100vh;
-  max-width: 100vw;
-  height: 100vh;
-  width: 100vw;
+.above-page {
+  transform: translateY(-50%);
+}
+
+html, body, main {
+  min-height: 100%;
+  min-width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   box-sizing: border-box;
+  margin: 0;
 }
 
-body, main {
-  max-height: inherit;
-  max-width: inherit;
-  min-height: inherit;
-  min-width: inherit;
-  height: inherit;
-  width: inherit;
+body {
+  --ll-logo-height: 9vh;
+  --ll-name-element-font-size: 5vh;
+  --ll-description-element-1-font-size: 2.1vh;
+  --ll-description-element-2-font-size: 1.6vh;
+  --interior-max-width: 25vh;
+  --calendar-heading-font-size: 1.6vh;
+  --ll-calendar-content-font-size: 1.6vh;
+  --blinking-light-height: 1.25vh;
+	--blinking-light-width: 2vh;
+  --interior-max-width: 22vh;
+  --ll-name-margin: 4vh 0%;
+  --ll-description-margin: 1vh 0% 1vh 0%;
+  --ll-calendar-top-margin: 2vh;
+  --calendar-heading-padding: 0 10vw 0.45vh 10vw;
 }
 
 #content {
   height: 100%;
   width: 100%;
+  padding-top: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,34 +57,45 @@ body, main {
   width: 100%;
   position: absolute;
   z-index: -1000;
+  transition: background-color 1s;
 }
 
 #ll-logo {
   height: var(--ll-logo-height);
   max-width: var(--interior-max-width);
+  transition: opacity 3s ease-in, transform 2s ease-out;
 }
 
 #ll-name {
   margin: var(--ll-name-margin);
   max-width: var(--interior-max-width);
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Source Code Variable', Source Code Variable, monospace;
 }
 
 .ll-name-element {
   margin-block: 0;
   font-size: var(--ll-name-element-font-size);
   font-weight: normal;
+  transition: opacity 1.5s;
 }
 
 #ll-description, #ll-station {
   margin: var(--ll-description-margin);
   max-width: var(--interior-max-width);
+  transition: opacity 2s;
 }
 
-#ll-description-element, #ll-station-element {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+#ll-description-element-1, #ll-station-element {
+  font-family: 'Galvji', 'Galvji', Calibri, 'Galvji', sans-serif;
   margin-block: 0;
-  font-size: var(--ll-description-element-font-size);
+  font-size: var(--ll-description-element-1-font-size);
+  font-weight: normal;
+}
+
+#ll-description-element-2 {
+  font-family: 'Galvji', 'Galvji', Calibri, 'Galvji', sans-serif;
+  margin-block: 0;
+  font-size: var(--ll-description-element-2-font-size);
   font-weight: normal;
 }
 
@@ -101,10 +108,15 @@ body, main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Galvji', 'Galvji', Courier, 'Galvji', sans-serif;
+  transition: opacity 2s;
 }
 
 #ll-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   white-space: nowrap;
   min-width: fit-content;
   font-weight: normal;
@@ -113,7 +125,45 @@ body, main {
   font-size: var(--calendar-heading-font-size);
 }
 
+#ll-calendar-header a {
+  color: black;
+  padding-left: 2%;
+}
+
+#ll-calendar-header a:hover {
+  text-decoration: none;
+}
+
+.blinking-light {
+	background: rgb(0, 255, 0);
+	border-radius: 50%;
+	height: var(--blinking-light-height);
+	width: var(--blinking-light-width);
+  margin-right: 2%;
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	transform: scale(1);
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
+
 #ll-calendar {
+  min-width: fit-content;
   width: 120%;
   border-spacing: 0;
   border-collapse: collapse;
@@ -122,8 +172,12 @@ body, main {
   white-space: nowrap;
 }
 
+#ll-calendar-body tr {
+  border-bottom: 0.1vh solid RGBA(211, 211, 218, 0.5);
+}
+
 .top-row {
-  border-top: 2px black solid;
+  border-top: 0.25vh black solid;
 }
 
 .ll-calendar-element {
@@ -132,19 +186,24 @@ body, main {
 }
 
 .ll-date {
-  width: 30%;
-  border-right: 2px black solid;
+  min-width: fit-content;
+  max-width: 30%;
+  border-right: 0.25vh black solid;
 }
 
 .ll-location {
-  width: 70%;
+  min-width: fit-content;
+  max-width: 70%;
 }
 
 .ll-date, .ll-location {
   margin-block: 0;
   font-size: var(--ll-calendar-content-font-size);
   padding: 2% 5%;
-  border-bottom: 1px solid RGBA(211, 211, 218, 0.5);
+}
+
+.strike-through {
+  text-decoration: line-through;
 }
 
 svg {
@@ -154,8 +213,14 @@ svg {
 }
 
 text {
-  font-family: 'Knewave', cursive;
-  fill: #00C891;
+  font-family: 'Galvji';
+  fill: #5900ff;
+  font-size: 8px;
+}
+
+#myPath {
+  background-color: inherit;
+  transition: stroke 1s;
 }
 
 .img-overlay-wrap {
@@ -178,4 +243,14 @@ text {
 
 .img-overlay-wrap:hover {
   transform: rotate( 15deg );
+}
+
+@font-face {
+  font-family: 'Galvji';
+  src: url('fonts/Galvji/Galvji-01.ttf');
+}
+
+@font-face {
+  font-family: 'Source Code Variable';
+  src: url('fonts/SourceCodeVariable/SourceCodePro-Light.ttf');
 }

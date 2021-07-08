@@ -7,36 +7,29 @@
     <title>LIGHT LAYER</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="graphics/graphics/ll-logo.png">
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
-    </style>
+    <!-- Font Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
-    <main>
+    <main id="main">
       <div id="content"><!-- class="floatTL" -->
-        <img id="ll-logo" src="graphics/graphics/ll-logo.png">
+        <img id="ll-logo" class="above-page hidden" src="graphics/graphics/logo.png">
         <div id="ll-name">
-          <h1 class="ll-name-element">light</h1>
-          <h1 class="ll-name-element">layer</h1>
+          <h1 class="ll-name-element hidden">light</h1>
+          <h1 class="ll-name-element hidden">layer</h1>
         </div>
-        <div id="ll-description">
-          <h2 id="ll-description-element">A music radio show</h2>
+        <div id="ll-description" class="hidden">
+          <h2 id="ll-description-element-1">A music radio show</h2>
         </div>
-        <div id="ll-station">
-          <h2 id="ll-station-element">Broadcasting on KZSU Stanford and Noods Radio</h2>
+        <div id="ll-station" class="hidden">
+          <h2 id="ll-description-element-2">Broadcasting at KZSU Stanford and beyond</h2>
         </div>
-        <div id="ll-calendar-container">
+        <div id="ll-calendar-container" class="hidden">
           <h3 id="ll-calendar-header"></h3>
           <table id="ll-calendar">
             <tbody id="ll-calendar-body">
-              <tr class="ll-calendar-element top-row" date="05/07" timeStart="14:00" timeEnd="15:00" location="KZSU">
-                <td class="ll-date">05/07</td>
-                <td class="ll-location">2-3pm KZSU</td>
-              </tr>
-              <tr class="ll-calendar-element" date="05/10" timeStart="13:00" timeEnd="17:00" location="BFF.fm">
-                <td class="ll-date">05/10</td>
-                <td class="ll-location">1-5pm BFF.fm</td>
-              </tr>
             </tbody>
           </table>
         </div>
@@ -44,37 +37,16 @@
       <div id="arc" class="floatTL">
         <svg id="arc-svg" viewBox="0 0 235.46 379.61" preserveAspectRatio="none">
           <g>
-            <path id="myPath" fill="none" stroke="#fff" stroke-miterlimit="0" d="M39.01 275V84.94c.28-14.2 4.96-27.96 13.38-39.39l1.91-2.59A68.703 68.703 0 01109.62 15h18.12c21.49 0 41.73 10.05 54.73 27.16a68.75 68.75 0 0113.99 41.55V275"/>
+            <path id="myPath" fill="none" stroke="#fff" stroke-miterlimit="0" d="M0,260V107.34C0,95.52-.49,83.58,0,71.77.74,53.88,5.67,35.85,18,22.24,32.72,6,56.75.33,77.39,7.51a57.51,57.51,0,0,1,33.8,32.15c7.32,17.84,6.44,37.64,6.74,56.55.45,27.29-.53,54.58-.53,81.87V260"/>
             <text>
-              <textpath xlink:href="#myPath">
-                Jaco Pastorius	- Portrait of Tracy / SWV	- Rain / Sharon - Revoal	Reaching for Our Star / Tirzah	- Holding On / Taeko Unuki - Dare no Tame ni / D'Angelo	- Betray My Heart / Jason Ayala	- Obscura / The Internet	- Wanna Be / Erykah Badu	- Bag Lady (Radio Edit) / Curtis Mayfield	- No Thing on Me (Cocaine Song) / Freddie Mcgregor	- Natural Collie / MF DOOM / Angelika / 4ize	- Guinesses feat. Angelika / 4ize / Les Sins	- Bellow / Wilma Archer	- Scarecrow / Princess Nokia	- Saggy Denim / King Krule	- Biscuit Town / Parquet Courts	- Human Performance
-                <animate
-                  attributeName="startOffset"
-                  from="-675%"
-                  to ="100%"
-                  dur="200s"
-                  repeatCount="indefinite"
-                  restart="always"
-                  keyTimes="0;1"
-                  calcMode="paced"
-                  />
-                  <!-- keySplines="0.1 0.2 .22 1" -->
-                <animate
-                  attributeName="fill"
-                  dur="90s"
-                  values="#006400;#000080;gray"
-                  calcMode="paced"/>
+              <textpath id="arc-text" xlink:href="#myPath">
               </textpath>
             </text>
-            <!-- <text x="50%" y="25%" text-anchor="middle" stroke-width="2px" dy=".3em" font="helvetica">
-              LIGHT
-              LAYER
-            </text> -->
           </g>
         </svg>
       </div>
-    </main>  
+    </main>
   </body>
-  <script type="text/javascript" src="js/index.js">
+  <script type="module" src="js/index.js">
   </script>
 </html>
