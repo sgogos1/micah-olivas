@@ -23,9 +23,10 @@ html, body, main {
 }
 
 body {
-  --ll-logo-height: 10vh;
-  --ll-name-element-font-size: 6vh;
-  --ll-description-element-font-size: 2vh;
+  --ll-logo-height: 9vh;
+  --ll-name-element-font-size: 5vh;
+  --ll-description-element-1-font-size: 2.5vh;
+  --ll-description-element-2-font-size: 1.9vh;
   --interior-max-width: 25vh;
   --calendar-heading-font-size: 1.9vh;
   --ll-calendar-content-font-size: 1.7vh;
@@ -33,9 +34,9 @@ body {
 	--blinking-light-width: 2vh;
   --interior-max-width: 22vh;
   --ll-name-margin: 4vh 0%;
-  --ll-description-margin: 1vh 0% 2vh 0%;
+  --ll-description-margin: 1vh 0% 1vh 0%;
   --ll-calendar-top-margin: 2vh;
-  --calendar-heading-padding: 0 10vw 0.5vh 10vw;
+  --calendar-heading-padding: 0 10vw 0.45vh 10vw;
 }
 
 #content {
@@ -84,10 +85,17 @@ body {
   transition: opacity 2s;
 }
 
-#ll-description-element, #ll-station-element {
+#ll-description-element-1, #ll-station-element {
   font-family: 'Galvji', 'Galvji', Calibri, 'Galvji', sans-serif;
   margin-block: 0;
-  font-size: var(--ll-description-element-font-size);
+  font-size: var(--ll-description-element-1-font-size);
+  font-weight: normal;
+}
+
+#ll-description-element-2 {
+  font-family: 'Galvji', 'Galvji', Calibri, 'Galvji', sans-serif;
+  margin-block: 0;
+  font-size: var(--ll-description-element-2-font-size);
   font-weight: normal;
 }
 
